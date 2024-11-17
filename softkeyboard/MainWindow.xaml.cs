@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using iNKORE.UI.WPF.Modern.Controls;
 
 namespace softkeyboard
 {
@@ -55,10 +56,11 @@ namespace softkeyboard
             this.Close();
         }
 
-        private void SettingsBtn_click(object sender, RoutedEventArgs e)
+        private async void SettingsBtn_click(object sender, RoutedEventArgs e)
         {
-            SettingsWindow window = new();
-            window.ShowDialog();
+            //SettingsWindow window = new();
+            //window.ShowDialog();
+            var result = await termsOfUseContentDialog.ShowAsync();
         }
     }
 }

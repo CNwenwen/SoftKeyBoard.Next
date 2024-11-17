@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:controls1="clr-namespace:softkeyboard.Controls;assembly=softkeyboard.Controls"
         mc:Ignorable="d"
+        xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
         WindowStyle="None"
         WindowStartupLocation="Manual"
         AllowsTransparency="True"
@@ -95,6 +96,23 @@
         <Viewbox Margin="0,0,6,0">
             <controls1:SoftKeyBoard></controls1:SoftKeyBoard>
         </Viewbox>
+        <ui:ContentDialog x:Name="termsOfUseContentDialog"
+                          DefaultButton="Primary"
+                       PrimaryButtonText="知道了"
+                       CloseButtonText="关闭">
+            <ui:ContentDialog.TitleTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="提醒"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ui:ContentDialog.TitleTemplate>
+            <StackPanel>
+                <TextBlock TextWrapping="WrapWithOverflow">
+                    设置目前不可用，请等待开发者开发完毕。
+                </TextBlock>
+            </StackPanel>
+        </ui:ContentDialog>
         <Button Width="21" Height="21" Style="{StaticResource CloseBtn}" VerticalAlignment="Top" HorizontalAlignment="Right" Click="ButtonBase_OnClick"/>
         <Button Width="21" Height="21" Style="{StaticResource SettingBtn}" VerticalAlignment="Top" HorizontalAlignment="Left" Click="SettingsBtn_click"></Button>
     </Grid>
